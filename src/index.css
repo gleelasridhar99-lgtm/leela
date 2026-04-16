@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-primary: #00ff9f;
+  --color-neon-secondary: #ff00ff;
+  --color-dark-bg: #050505;
+  --color-dark-surface: #0f0f12;
+  --color-dark-border: #1a1a20;
+  --color-text-dim: #71717a;
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 10px var(--color-neon-primary), 0 0 20px var(--color-neon-primary);
+  }
+  .glow-secondary {
+    box-shadow: 0 0 15px var(--color-neon-secondary), 0 0 30px var(--color-neon-secondary);
+  }
+  .text-glow-primary {
+    text-shadow: 0 0 5px var(--color-neon-primary), 0 0 10px var(--color-neon-primary);
+  }
+  .text-glow-secondary {
+    text-shadow: 0 0 5px var(--color-neon-secondary), 0 0 10px var(--color-neon-secondary);
+  }
+}
+
+body {
+  @apply bg-dark-bg text-[#e0e0e0] font-sans antialiased overflow-hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-text-dim;
+}
